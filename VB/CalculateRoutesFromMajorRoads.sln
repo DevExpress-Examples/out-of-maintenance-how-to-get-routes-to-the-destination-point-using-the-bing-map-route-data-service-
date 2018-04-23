@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CalculateRoutesFromMajorRoads", "CalculateRoutesFromMajorRoads\CalculateRoutesFromMajorRoads.vbproj", "{11B03353-582F-40D1-B60A-467F411FDBBB}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CalculateRoutesFromMajorRoads.Web", "CalculateRoutesFromMajorRoads.Web\CalculateRoutesFromMajorRoads.Web.vbproj", "{34A26F98-891B-4F62-AA26-EEA418B3AD7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11B03353-582F-40D1-B60A-467F411FDBBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11B03353-582F-40D1-B60A-467F411FDBBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11B03353-582F-40D1-B60A-467F411FDBBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11B03353-582F-40D1-B60A-467F411FDBBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34A26F98-891B-4F62-AA26-EEA418B3AD7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34A26F98-891B-4F62-AA26-EEA418B3AD7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34A26F98-891B-4F62-AA26-EEA418B3AD7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34A26F98-891B-4F62-AA26-EEA418B3AD7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
