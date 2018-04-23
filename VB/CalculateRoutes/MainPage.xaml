@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="CalculateRoutes.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"       
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxm="http://schemas.devexpress.com/winfx/2008/xaml/map"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    mc:Ignorable="d"
+    d:DesignHeight="640" d:DesignWidth="930" >
+
+    <UserControl.Resources>
+        <sys:String x:Key="YourBingKey">
+            INSERT_YOUR_BING_KEY_HERE
+        </sys:String>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="400" />
+        </Grid.ColumnDefinitions>
+        <dxm:MapControl x:Name="mapControl1" Grid.Row="0" Grid.Column="0">
+            <dxm:ImageTilesLayer>
+                <dxm:ImageTilesLayer.DataProvider>
+                    <dxm:BingMapDataProvider Kind="Road" BingKey="{Binding Source={StaticResource YourBingKey}}"/>
+                </dxm:ImageTilesLayer.DataProvider>
+            </dxm:ImageTilesLayer>
+            <dxm:InformationLayer EnableHighlighting="False">
+                <dxm:InformationLayer.DataProvider>
+                    <dxm:BingRouteDataProvider x:Name="routeProvider" 
+                                               BingKey="{Binding Source={StaticResource YourBingKey}}"
+                                               RouteCalculated="routeDataProvider_RouteCalculated">
+                        <dxm:BingRouteDataProvider.RouteStrokeStyle>
+                            <dxm:StrokeStyle Thickness="10" DashCap="Round" StartLineCap="Round" EndLineCap="Round" />
+                        </dxm:BingRouteDataProvider.RouteStrokeStyle>
+                    </dxm:BingRouteDataProvider>
+                </dxm:InformationLayer.DataProvider>
+            </dxm:InformationLayer>
+        </dxm:MapControl>
+        <StackPanel Grid.Row="0" Grid.Column="1" >
+            <StackPanel Orientation="Horizontal">
+                <sdk:Label Content="Bing Travel Mode " Width="163"/>
+                <ComboBox x:Name="cbMode" SelectedIndex="0">
+                    <ComboBoxItem Content="Driving"/>
+                    <ComboBoxItem Content="Walking"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <sdk:Label Content="Route Optimization" Width="163"/>
+                <ComboBox x:Name="cbOptimize" SelectedIndex="0">
+                    <ComboBoxItem Content="Minimize Time"/>
+                    <ComboBoxItem Content="Minimize Distance"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <sdk:Label Content="Destination Latitude" Width="163" VerticalAlignment="Top" />
+                <TextBox Name="tbLatitude" Width="153" VerticalAlignment="Top" Text="40" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <sdk:Label  Content="Destination Longitude" Width="163" HorizontalAlignment="Right" />
+                <TextBox Name="tbLongitude" Width="153" VerticalAlignment="Top" Text="-120" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <sdk:Label Content="Destination Name (Optional)" Width="163" />
+                <TextBox Name="tbDestination" Width="163" VerticalAlignment="Top" />
+            </StackPanel>
+            <Button Content="Calculate Routes From Major Roads" Width="220" Margin="12" Click="calculateRoutes_Click" />
+            <ScrollViewer MaxWidth="370" MaxHeight="350" 
+                          HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible">
+                <TextBlock Name="tbResults" Foreground="Red" TextWrapping="Wrap" Width="350" />
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</UserControl>

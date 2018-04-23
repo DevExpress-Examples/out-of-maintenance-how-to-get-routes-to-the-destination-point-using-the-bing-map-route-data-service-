@@ -1,0 +1,7 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="CalculateRoutes.App" xmlns:my="clr-namespace:System;assembly=mscorlib">
+  <Application.Resources>
+    <my:String x:Key="DevExpress.Xpf.License">0B-04-94-04-03-32-69-3D-FB-5C-49-C0-F8-8A-BE-73-EC-87-91-8A</my:String>
+  </Application.Resources>
+</Application>
