@@ -1,0 +1,67 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxm="http://schemas.devexpress.com/winfx/2008/xaml/map" 
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+    x:Class="XpfMapFromMajorRoutes.MainPage"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <sys:String x:Key="bingMapsKey">YOUR_BING_MAPS_KEY</sys:String>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <dxlc:LayoutControl>
+            <dxm:MapControl x:Name="mapControl">
+                <dxm:ImageTilesLayer>
+                    <dxm:ImageTilesLayer.DataProvider>
+                        <dxm:BingMapDataProvider BingKey="{Binding Source={StaticResource bingMapsKey}}"/>
+                    </dxm:ImageTilesLayer.DataProvider>
+                </dxm:ImageTilesLayer>
+                <dxm:InformationLayer>
+                    <dxm:InformationLayer.DataProvider>
+                        <dxm:BingRouteDataProvider x:Name="routeProvider"
+                                                   BingKey="{Binding Source={StaticResource bingMapsKey}}" 
+                                                   RouteCalculated="BingRouteDataProvider_RouteCalculated"/>
+                    </dxm:InformationLayer.DataProvider>
+                </dxm:InformationLayer>
+            </dxm:MapControl>
+            <dxlc:LayoutGroup Orientation="Vertical" Width="300">
+                <dxlc:LayoutItem Label="Bing Travel Mode:">
+                    <ComboBox x:Name="cbTravelMode" SelectedIndex="0">
+                        <ComboBoxItem Content="Driving"/>
+                        <ComboBoxItem Content="Walking"/>
+                    </ComboBox>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="Route Optimization:">
+                    <ComboBox x:Name="cbRouteOptimization" SelectedIndex="0">
+                        <ComboBoxItem Content="MinimizeT Time"/>
+                        <ComboBoxItem Content="MinimizeT Distance"/>
+                    </ComboBox>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="Latitude:">
+                    <TextBox x:Name="tbLatitude"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="Longitude:">
+                    <TextBox x:Name="tbLongitude"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="Destination Name (optional):">
+                    <TextBox x:Name="tbDestination"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem>
+                    <Button x:Name="bCalculateRoute" Click="bCalculateRoute_Click" Content="Calculate Routes From Major Roads"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem VerticalAlignment="Stretch">
+                    <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                                  VerticalScrollBarVisibility="Visible">
+                        <TextBlock Name="tbResults" Foreground="Red" TextWrapping="Wrap" Width="350" />
+                    </ScrollViewer>
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutControl>
+    </Grid>
+</UserControl>

@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpfMapFromMajorRoutes", "XpfMapFromMajorRoutes\XpfMapFromMajorRoutes.csproj", "{46AEA3E9-7239-46B8-A43C-C8D6EC94B63A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XpfMapFromMajorRoutes.Web", "XpfMapFromMajorRoutes.Web\XpfMapFromMajorRoutes.Web.csproj", "{9BCD96C2-F1E7-40F0-B384-1EA529587DCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46AEA3E9-7239-46B8-A43C-C8D6EC94B63A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46AEA3E9-7239-46B8-A43C-C8D6EC94B63A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46AEA3E9-7239-46B8-A43C-C8D6EC94B63A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46AEA3E9-7239-46B8-A43C-C8D6EC94B63A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BCD96C2-F1E7-40F0-B384-1EA529587DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BCD96C2-F1E7-40F0-B384-1EA529587DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BCD96C2-F1E7-40F0-B384-1EA529587DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BCD96C2-F1E7-40F0-B384-1EA529587DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
