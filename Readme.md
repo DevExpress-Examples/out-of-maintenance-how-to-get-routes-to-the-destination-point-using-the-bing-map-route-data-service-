@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainPage.xaml](./CS/CalculateRoutes/MainPage.xaml) (VB: [MainPage.xaml.vb](./VB/CalculateRoutes/MainPage.xaml.vb))
+* [MainPage.xaml.cs](./CS/CalculateRoutes/MainPage.xaml.cs) (VB: [MainPage.xaml.vb](./VB/CalculateRoutes/MainPage.xaml.vb))
+<!-- default file list end -->
 # How to get routes to the destination point using the Bing Map Route Data Service  
 
 
