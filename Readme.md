@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * **[MainPage.xaml](./CS/XpfMapFromMajorRoutes/MainPage.xaml) (VB: [MainPage.xaml](./VB/XpfMapFromMajorRoutes/MainPage.xaml))**
-* [MainPage.xaml.cs](./CS/XpfMapFromMajorRoutes/MainPage.xaml.cs) (VB: [MainPage.xaml](./VB/XpfMapFromMajorRoutes/MainPage.xaml))
+* [MainPage.xaml.cs](./CS/XpfMapFromMajorRoutes/MainPage.xaml.cs) (VB: [MainPage.xaml.vb](./VB/XpfMapFromMajorRoutes/MainPage.xaml.vb))
 <!-- default file list end -->
 # How to get routes to the destination point using the Bing Map Route Data Service  
 
